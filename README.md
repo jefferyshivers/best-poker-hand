@@ -5,6 +5,40 @@ To run the app in your console, clone the repo, do: `npm install`, and then in t
 
 The code that makes this work is located in `./bestHandsAPI.js` and `./helpers.js`.
 
+## API
+The main function of the API is `findBestHand(<cards>)` which takes an array `cards` and returns a new object with the name of the best hand and the array of cards used by that hand.
+
+### cards
+A card is assumed to be an object with two keys:
+- `suit`: a string (one of: "CLUBS", "HEARTS", "SPADES", "DIAMONDS")
+- `value`: a string (one of: "ACE", "KING", "QUEEN", "JACK", or one of: 2,3,4,5,6,7,8,9,10 stringified) or an integer (one of: 2,3,4,5,6,7,8,9,10)
+
+An example of usage is:
+```js
+const findBestHand = require('bestHandsAPI').findBestHand;
+
+const HAND_WITH_A_STRAIGHT = [ 
+  { suit: 'CLUBS', value: '2' },
+  { suit: 'CLUBS', value: '3' },
+  { suit: 'HEARTS', value: '4' },
+  { suit: 'CLUBS', value: '5' },
+  { suit: 'CLUBS', value: '6' } 
+]
+
+console.log(findBestHand(HAND_WITH_A_STRAIGHT));
+
+// expected console output:
+// { 
+//   best_hand: 'Straight',
+//   hand: 
+//     [ { suit: 'CLUBS', value: '2' },
+//      { suit: 'CLUBS', value: '3' },
+//      { suit: 'HEARTS', value: '4' },
+//      { suit: 'CLUBS', value: '5' },
+//      { suit: 'CLUBS', value: '6' } ] 
+// }
+```
+
 ## testing it
 You can run the tests with `npm test` or `jasmine`. Those tests are located in `./spec`.
 
