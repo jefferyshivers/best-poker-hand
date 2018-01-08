@@ -27,7 +27,6 @@ const reduceHand = hand => {
 
 fetchUrl(`https://deckofcardsapi.com/api/deck/new/draw/?count=5`, (error, meta, body) => {
   const cards = JSON.parse(body).cards;
-  console.log(cards);
   const bestHand = bh.findBestHand(cards, potentialHands);
 
   console.log("Your best hand is a", bestHand.best_hand);
