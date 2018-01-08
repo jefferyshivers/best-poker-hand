@@ -13,6 +13,7 @@ A card is assumed to be an object with two keys:
 - `suit`: a string (one of: "CLUBS", "HEARTS", "SPADES", "DIAMONDS")
 - `value`: a string (one of: "ACE", "KING", "QUEEN", "JACK", or one of: 2,3,4,5,6,7,8,9,10 stringified) or an integer (one of: 2,3,4,5,6,7,8,9,10)
 
+### example
 An example of usage is:
 ```js
 const findBestHand = require('bestHandsAPI').findBestHand;
