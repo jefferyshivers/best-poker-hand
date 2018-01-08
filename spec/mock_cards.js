@@ -1,4 +1,3 @@
-
 const STRAIGHT_FLUSH = [ 
   {
     suit: 'CLUBS',
